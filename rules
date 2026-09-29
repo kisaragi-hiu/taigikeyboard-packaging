@@ -6,6 +6,7 @@
 override_dh_auto_build:
 	mkdir -p linux/.cargo
 	cp debian/cargo.config.toml linux/.cargo/config.toml
+	mv debian/vendor linux/vendor
 	dh_auto_build -- -C linux build
 	dh_auto_build -- -C linux component
 	dh_auto_build -- -C linux build-fcitx5

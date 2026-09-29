@@ -9,6 +9,7 @@ Build-Depends:
  fcitx5-modules-dev,
  libfcitx5core-dev,
  pkgconf,
+ cargo,
 Standards-Version: 4.7.4
 Homepage: https://github.com/taigikeyboard/taigikeyboard
 #Vcs-Browser: https://salsa.debian.org/debian/taigikeyboard

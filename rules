@@ -12,3 +12,7 @@ override_dh_auto_build:
 # workflow. Really, just don't bother running tests here.
 override_dh_auto_test:
 	true
+
+override_dh_auto_install:
+	cd linux && make install
+	cd linux && make install-fcitx5

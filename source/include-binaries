@@ -1,0 +1,13 @@
+debian/vendor/system-deps/src/tests/test.tar.xz
+debian/vendor/system-deps/src/tests/test.zip
+debian/vendor/system-deps/src/tests/test.tar.gz
+debian/vendor/unicode-ident/tests/fst/xid_continue.fst
+debian/vendor/unicode-ident/tests/fst/xid_start.fst
+debian/vendor/petgraph/assets/images/pridosaurus-64.png
+debian/vendor/petgraph/assets/images/pridosaurus-256.png
+debian/vendor/petgraph/assets/images/graphosaurus-128.png
+debian/vendor/petgraph/assets/images/graphosaurus-512.png
+debian/vendor/petgraph/assets/images/pridosaurus-512.png
+debian/vendor/petgraph/assets/images/graphosaurus-64.png
+debian/vendor/petgraph/assets/images/graphosaurus-256.png
+debian/vendor/petgraph/assets/images/pridosaurus-128.png

@@ -8,7 +8,8 @@ Ugly way to include Cargo dependencies in the source package.
 
 #+begin_src sh
 (cd linux && cargo vendor)
-mv linux/vendor debian/
+mv linux/vendor debian
+find debian/vendor '(' -name '*.png' -or -name 'tests' ')' -print0 | xargs -0 rm -rf
 # passed to dpkg-buildpackage.
 # -S: --build=source, build just a source package
 # -sa: source always includes orig

@@ -1,5 +1,19 @@
-taigikeyboard (3.6.10-1) UNRELEASED; urgency=medium
+taigikeyboard (3.6.10-0ppa1) UNRELEASED; urgency=medium
 
-  * Initial release. (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+  * Initial release.
+  * comma
+  * reformat
+  * too new
+  * fix paths
+  * cargo
+  * Add patch to lower rust version requirement
+  * dep
+  * mark upstream-tag for pristine-tar
+  * skip all tests
+  * try to install files per package
+  * Make sure DESTDIR is passed correctly
+  * Hopefully fix building twice?
+  * Patch: do not install fonts
+  * preliminary copyright file
 
- -- Kisaragi Hiu <mail@kisaragi-hiu.com>  Tue, 29 Sep 2026 17:15:17 +0900
+ -- Kisaragi Hiu <mail@kisaragi-hiu.com>  Wed, 30 Sep 2026 05:52:01 +0900

@@ -1,3 +1,9 @@
+taigikeyboard (3.6.10-0ppa5) resolute; urgency=medium
+
+  * clean up .gitignore files from vendor
+
+ -- Kisaragi Hiu <mail@kisaragi-hiu.com>  Wed, 30 Sep 2026 08:23:41 +0900
+
 taigikeyboard (3.6.10-0ppa4) resolute; urgency=medium
 
   * fix .orig files in vendor being cleaned up

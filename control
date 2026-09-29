@@ -1,0 +1,49 @@
+Source: taigikeyboard
+Section: utils
+Maintainer: Kisaragi Hiu <mail@kisaragi-hiu.com>
+Rules-Requires-Root: no
+Build-Depends:
+ cmake,
+ debhelper-compat (= 14),
+ extra-cmake-modules,
+ fcitx5-modules-dev (>= 5.1.22~),
+ libfcitx5core-dev (>= 5.1.22~),
+ pkgconf,
+Standards-Version: 4.7.4
+Homepage: https://github.com/taigikeyboard/taigikeyboard
+#Vcs-Browser: https://salsa.debian.org/debian/taigikeyboard
+#Vcs-Git: https://salsa.debian.org/debian/taigikeyboard.git
+Description: An input method for Taiwanese Taigi
+ Taigi Keyboard is an input method for typing Taiwanese Taigi using standard
+ orthographies.
+
+Package: taigikeyboard-common
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: Common files for Taigi Keyboard
+ ${source:Extended-Description}
+ .
+ Common files include icons and dictionaries, as well as the settings app, which
+ are shared between the IBus and Fcitx5 wrappers.
+
+Package: ibus-taigikeyboard
+Architecture: any
+Depends:
+ ibus,
+ taigikeyboard-common
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: Input method for typing Taiwanese Taigi (IBus wrapper)
+ ${source:Extended-Description}
+
+Package: fcitx5-taigikeyboard
+Architecture: any
+Depends:
+ fcitx5,
+ taigikeyboard-common
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: Input method for typing Taiwanese Taigi (Fcitx5 wrapper)
+ ${source:Extended-Description}

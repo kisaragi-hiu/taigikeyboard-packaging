@@ -11,6 +11,8 @@ Build-Depends:
  pkgconf,
  cargo,
  libssl-dev,
+ libgtk-4-dev,
+ libadwaita-1-dev,
 Standards-Version: 4.7.4
 Homepage: https://github.com/taigikeyboard/taigikeyboard
 #Vcs-Browser: https://salsa.debian.org/debian/taigikeyboard

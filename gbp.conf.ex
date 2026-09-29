@@ -16,7 +16,7 @@ pristine-tar = True
 # import branch (`upstream/latest`) with the equivalent upstream release tag,
 # showing a complete audit trail of what upstream released and what was imported
 # into Debian.
-#upstream-vcs-tag = %(version%~%.)s
+upstream-vcs-tag = desktop-%(version%~%.)s
 
 # If upstream publishes tarball signatures, git-buildpackage will by default
 # import and use the them. Change this to 'on' to make 'gbp import-orig' abort

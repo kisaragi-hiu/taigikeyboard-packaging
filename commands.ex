@@ -9,6 +9,10 @@ Ugly way to include Cargo dependencies in the source package.
 #+begin_src sh
 (cd linux && cargo vendor)
 mv linux/vendor debian
+# for whatever reason certain vendored packages have .gitignore files in them
+# which debuild understandably omits, but then checksum checks fail.
+find debian/vendor -path "*/.cargo-checksum.json" \
+    -exec sed -i s/'"[a-z\/-]*\/\.gitignore":"[a-z0-9]\+",'// '{}' ';'
 # passed to dpkg-buildpackage.
 # -S: --build=source, build just a source package
 # -sa: source always includes orig

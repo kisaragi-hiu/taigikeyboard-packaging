@@ -1,4 +1,4 @@
-taigikeyboard (3.6.10-0ppa1) UNRELEASED; urgency=medium
+taigikeyboard (3.6.10-0ppa1) resolute; urgency=medium
 
   * Initial release.
   * comma
@@ -16,4 +16,4 @@ taigikeyboard (3.6.10-0ppa1) UNRELEASED; urgency=medium
   * Patch: do not install fonts
   * preliminary copyright file
 
- -- Kisaragi Hiu <mail@kisaragi-hiu.com>  Wed, 30 Sep 2026 05:52:01 +0900
+ -- Kisaragi Hiu <mail@kisaragi-hiu.com>  Wed, 30 Sep 2026 05:57:26 +0900

@@ -1,7 +1,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Source: <url://example.com>
+Source: https://github.com/taigikeyboard/taigikeyboard
 Upstream-Name: taigikeyboard
-Upstream-Contact: <preferred name and address to reach the upstream project>
+Upstream-Contact: Taigi Keyboard <info@taigikeyboard.tw>
 
 Files:
  *
@@ -14,12 +14,3 @@ Files:
 Copyright:
  2026, Kisaragi Hiu <mail@kisaragi-hiu.com>
 License: Apache-2.0
-
-# Please also look if there are files or directories which have a
-# different copyright/license attached and list them here.
-# Please avoid picking licenses with terms that are more restrictive than the
-# packaged work, as it may make Debian's contributions unacceptable upstream.
-#
-# If you need, there are some extra license texts available in two places:
-#   /usr/share/debhelper/dh_make/licenses/
-#   /usr/share/common-licenses/

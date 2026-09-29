@@ -32,7 +32,7 @@ Package: ibus-taigikeyboard
 Architecture: any
 Depends:
  ibus,
- taigikeyboard-common
+ taigikeyboard-common,
  ${misc:Depends},
  ${shlibs:Depends},
 Description: Input method for typing Taiwanese Taigi (IBus wrapper)
@@ -42,7 +42,7 @@ Package: fcitx5-taigikeyboard
 Architecture: any
 Depends:
  fcitx5,
- taigikeyboard-common
+ taigikeyboard-common,
  ${misc:Depends},
  ${shlibs:Depends},
 Description: Input method for typing Taiwanese Taigi (Fcitx5 wrapper)

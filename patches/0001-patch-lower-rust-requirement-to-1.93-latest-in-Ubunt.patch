@@ -1,0 +1,27 @@
+From: Kisaragi Hiu <mail@kisaragi-hiu.com>
+Date: Wed, 30 Sep 2026 03:07:08 +0900
+Subject: patch: lower rust requirement to 1.93 (latest in Ubuntu)
+
+---
+ desktop/Cargo.toml | 2 +-
+ linux/Cargo.toml   | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/desktop/Cargo.toml b/desktop/Cargo.toml
+index d269e0b..6f2c1a1 100644
+--- a/desktop/Cargo.toml
++++ b/desktop/Cargo.toml
+@@ -24,3 +24,3 @@ version = "3.6.10"
+ edition = "2021"
+-rust-version = "1.95"
++rust-version = "1.93"
+ license = "Apache-2.0"
+diff --git a/linux/Cargo.toml b/linux/Cargo.toml
+index 2cc0d98..a6cadd5 100644
+--- a/linux/Cargo.toml
++++ b/linux/Cargo.toml
+@@ -22,3 +22,3 @@ version = "3.6.10"
+ edition = "2021"
+-rust-version = "1.95"
++rust-version = "1.93"
+ license = "Apache-2.0"

@@ -14,5 +14,4 @@ override_dh_auto_test:
 	true
 
 override_dh_auto_install:
-	cd linux && make install
-	cd linux && make install-fcitx5
+	dh_auto_install -- -C linux

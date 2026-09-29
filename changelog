@@ -1,3 +1,11 @@
+taigikeyboard (3.6.10-0ppa3) resolute; urgency=medium
+
+  * maybe this would work
+  * clean up the vendor directory
+  * no, we cannot tinker with the vendor directory like that
+
+ -- Kisaragi Hiu <mail@kisaragi-hiu.com>  Wed, 30 Sep 2026 07:19:00 +0900
+
 taigikeyboard (3.6.10-0ppa2) resolute; urgency=medium
 
   * We cannot fetch from cargo during build

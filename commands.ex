@@ -12,7 +12,9 @@ mv linux/vendor debian
 # for whatever reason certain vendored packages have .gitignore files in them
 # which debuild understandably omits, but then checksum checks fail.
 find debian/vendor -path "*/.cargo-checksum.json" \
-    -exec sed -i s/'"[a-z\/-]*\/\.gitignore":"[a-z0-9]\+",'// '{}' ';'
+    -exec sed -i s/'"[a-z0-9\/-]*\/\.gitignore":"[a-z0-9]\+",'//g '{}' ';'
+find debian/vendor -path "*/.cargo-checksum.json" \
+    -exec sed -i s/'"[a-z0-9\/-]*\/[a-z0-9]*\.a":"[a-z0-9]\+",'//g '{}' ';'
 # passed to dpkg-buildpackage.
 # -S: --build=source, build just a source package
 # -sa: source always includes orig

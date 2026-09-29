@@ -1,0 +1,10 @@
+# -*- mode: yaml; -*-
+# See https://wiki.debian.org/UpstreamMetadata for more info/fields.
+# Below an example based on a github project.
+
+Bug-Database: https://github.com/taigikeyboard/taigikeyboard/issues
+Bug-Submit: https://github.com/taigikeyboard/taigikeyboard/issues/new
+Changelog: https://github.com/taigikeyboard/taigikeyboard/tree/main/changelog
+Repository-Browse: https://github.com/taigikeyboard/taigikeyboard
+Repository: https://github.com/taigikeyboard/taigikeyboard.git
+Donation: https://taigikeyboard.tw/#sponsor

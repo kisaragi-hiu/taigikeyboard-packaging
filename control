@@ -9,6 +9,7 @@ Build-Depends:
  fcitx5-modules-dev,
  libfcitx5core-dev,
  pkgconf,
+ protobuf-compiler,
  cargo,
  libssl-dev,
  libgtk-4-dev,

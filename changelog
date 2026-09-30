@@ -1,3 +1,9 @@
+taigikeyboard (3.6.10-0ppa7) resolute; urgency=medium
+
+  * Another missing dependency (protobuf-compiler)
+
+ -- Kisaragi Hiu <mail@kisaragi-hiu.com>  Wed, 30 Sep 2026 09:24:08 +0900
+
 taigikeyboard (3.6.10-0ppa6) resolute; urgency=medium
 
   * also clean up every *.a file for the same reason

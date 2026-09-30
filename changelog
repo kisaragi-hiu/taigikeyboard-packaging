@@ -1,3 +1,10 @@
+taigikeyboard (3.6.10-0ppa6) resolute; urgency=medium
+
+  * also clean up every *.a file for the same reason
+  * add missing dependencies
+
+ -- Kisaragi Hiu <mail@kisaragi-hiu.com>  Wed, 30 Sep 2026 09:12:56 +0900
+
 taigikeyboard (3.6.10-0ppa5) resolute; urgency=medium
 
   * clean up .gitignore files from vendor

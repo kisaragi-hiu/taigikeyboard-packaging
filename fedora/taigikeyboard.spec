@@ -29,7 +29,7 @@ Summary: Taigi input method for Fcitx5
 Requires: taigikeyboard-common
 
 %prep
-# todo
+%autosetup
 
 %build
 # todo

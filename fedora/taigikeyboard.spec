@@ -55,6 +55,7 @@ cd linux
 %make_build build-fcitx5
 
 %install
+cd linux
 %make_install
 
 %files -n taigikeyboard-common

@@ -9,5 +9,5 @@ Version: 5
 Source: https://api.github.com/repos/@PACKAGE@/@PACKAGE@/git/matching-refs/tags/desktop
 Matching-Pattern: https://api.github.com/repos/[^/]+/[^/]+/git/refs/tags/desktop-@ANY_VERSION@
 Download-Url-Mangle: s%(api.github.com/repos/[^/]+/[^/]+)/git/refs/%$1/tarball/refs/%g
-Filename-Mangle: s%.*/@ANY_VERSION@%@PACKAGE@-$1.tar.gz%
+Filename-Mangle: s%.*/desktop-@ANY_VERSION@%@PACKAGE@-$1.tar.gz%
 Search-Mode: plain

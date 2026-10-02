@@ -1,0 +1,40 @@
+* TaigiKeyboard Debian / Ubuntu packaging
+I followed [[https://optimizedbyotto.com/post/debian-packaging-from-git/][this guide]].
+
+** Remotes, branches, and tags
+- The remote =upstreamvcs= points to the upstream repository.
+- The remote =origin= points to this packaging repository.
+- The tags should be the same as upstream, ie. =desktop-3.6.10= points to version 3.6.10 of the desktop release.
+- the branch =main= mirrors the upstream main branch.
+- the branch =upstream/latest= contains the latest upstream release. This refers to a branch whose name is =upstream/latest=, not a “latest” branch in a remote called “upstream”! This is presumably why that remote is called =upstreamvcs=.
+- the branch =debian/latest= contains =upstream/latest= + debian packaging. When upstream updates, presumably this branch is rebased onto the new =upstream/latest=.
+- the branch =pristine-tar= is the git-buildpackage pristine tar branch.
+- there might (?) be patch-queue branches? Although the patches already live in debian/.
+
+To see the main packaging itself, check out =debian/latest=.
+
+** Building
+
+#+begin_src sh
+# passed to dpkg-buildpackage.
+# -S: --build=source, build just a source package
+# -sa: source always includes orig
+debuild -S -sa
+#+end_src
+
+** Cloning
+
+This probably works?
+
+#+begin_src sh
+git clone https://github.com/kisaragi-hiu/taigikeyboard-debian.git
+git checkout debian/latest
+git remote add upstreamvcs https://github.com/taigikeyboard/taigikeyboard.git
+#+end_src
+
+** Importing new upstream version
+
+#+begin_src sh
+git fetch upstreamvcs
+gbp import-orig --uscan
+#+end_src

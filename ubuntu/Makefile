@@ -17,6 +17,8 @@ src/README.md:
 .PHONY: build
 build: src/README.md
 	cd src
+	# prepare to include vendored files in the debian archive, which will be
+	# unpacked & configured during override_dh_auto_build
 	(cd linux && cargo vendor)
 	mv linux/vendor debian
 	# for whatever reason certain vendored packages have .gitignore files in them
@@ -25,4 +27,5 @@ build: src/README.md
 		-exec sed -i s/'"[a-z0-9\/-]*\/\.gitignore":"[a-z0-9]\+",'//g '{}' ';'
 	find debian/vendor -path "*/.cargo-checksum.json" \
 		-exec sed -i s/'"[a-z0-9\/-]*\/[a-z0-9]*\.a":"[a-z0-9]\+",'//g '{}' ';'
+	# then finally build the .dsc package
 	debuild -S -sa

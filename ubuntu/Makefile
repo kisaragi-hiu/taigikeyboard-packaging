@@ -1,5 +1,8 @@
 .ONESHELL:
 
+.PHONY: src
+src: src/README.md
+
 # Just using this file as a marker
 src/README.md:
 	@cd src
@@ -16,7 +19,7 @@ src/README.md:
 
 # Ugly way to include Cargo dependencies in the source package.
 .PHONY: build
-build: src/README.md
+build: src
 	cd src
 	# prepare to include vendored files in the debian archive, which will be
 	# unpacked & configured during override_dh_auto_build

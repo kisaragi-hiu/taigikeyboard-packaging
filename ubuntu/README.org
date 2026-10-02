@@ -1,0 +1,7 @@
+* Ubuntu packaging
+
+The =debian/= directory is for .deb tooling.
+
+Debian / Ubuntu tooling expect the tarball to be in the parent directory of this directory (so =debian/../../=) and would also put built packages there, which would normally be outside of the repository and require extra setup other than a Git clone.
+
+Putting this in an extra subdirectory should allow things to stay within this Git repository.

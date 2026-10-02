@@ -14,6 +14,7 @@ src/README.md:
 	echo "Unpacking the tarball..."
 	tar -xf "$$FILE" --strip-components=1
 
+# Ugly way to include Cargo dependencies in the source package.
 .PHONY: build
 build: src/README.md
 	cd src

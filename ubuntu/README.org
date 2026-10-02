@@ -1,7 +1,9 @@
 * Ubuntu packaging
 
-The =debian/= directory is for .deb tooling.
+Debian / Ubuntu tooling like dpkg-buildpackage would require the location of the =debian/= directory be identical to upstream, which makes it impossible for me to describe my changes or write down how to do stuff. So:
 
-Debian / Ubuntu tooling expect the tarball to be in the parent directory of this directory (so =debian/../../=) and would also put built packages there, which would normally be outside of the repository and require extra setup other than a Git clone.
+- Because I want the top level README to exist and for top level to be able to contain packaging for other distros, it has to be at least one subdirectory deep.
+  - Also because I want the produced files to stay within the repository, even if git-ignored.
+- And because I want this README to exist, it needs to be another subdirectory deep.
 
-Putting this in an extra subdirectory should allow things to stay within this Git repository.
+Hence the =debian/= directory existing as =:/ubuntu/src/debian=.

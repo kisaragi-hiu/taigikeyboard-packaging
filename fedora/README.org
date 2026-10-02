@@ -38,3 +38,4 @@ rpmbuild -ba taigikeyboard.spec
 compare with [[https://packages.fedoraproject.org/pkgs/fcitx5-rime/][fcitx5-rime]] and [[https://packages.fedoraproject.org/pkgs/ibus-rime/][ibus-rime]]
 ** TODO actually submit to COPR
 ** TODO automate submission to COPR
+** TODO patch out font installation

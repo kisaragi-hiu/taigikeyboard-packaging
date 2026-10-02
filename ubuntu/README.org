@@ -7,3 +7,33 @@ Debian / Ubuntu tooling like dpkg-buildpackage would require the location of the
 - And because I want this README to exist, it needs to be another subdirectory deep.
 
 Hence the =debian/= directory existing as =:/ubuntu/src/debian=.
+
+** Building
+
+#+begin_src sh
+make build
+#+end_src
+
+** Publishing
+
+After building
+
+#+begin_src sh
+dput ppa:kisaragi-hiu/taigikeyboard <.changes>
+#+end_src
+
+** Making a new package revision
+
+Write a new entry at =src/debian/changelog=, then
+
+#+begin_src sh
+make clean
+#+end_src
+
+, then rebuild and reupload. I wrote the =clean= target to only clean within =src/= which allows preserving the original tar files (to avoid extra downloads) and previous built package files.
+
+** Updating to a new upstream version
+
+I'm not sure.
+
+It's probably uscan, write a new entry, make sure it builds locally (fix patches), then rebuild + reupload. But a new upstream version hasn't happened yet so I haven't done this yet.

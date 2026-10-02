@@ -17,6 +17,10 @@ BuildRequires: fcitx5
 Taigi Keyboard is an input method for typing Taiwanese Taigi using standard
 orthographies.
 
+%generate_buildrequires
+cd linux
+%cargo_generate_buildrequires
+
 %package -n taigikeyboard-common
 Summary: Common files for Taigi Keyboard
 Requires: hicolor-icon-theme

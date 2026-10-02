@@ -39,7 +39,7 @@ cd linux
 %make_build build-fcitx5
 
 %install
-# todo
+%make_install
 
 %files
 # todo, we will have 3 packages later

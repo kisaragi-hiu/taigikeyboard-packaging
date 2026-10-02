@@ -41,8 +41,17 @@ cd linux
 %install
 %make_install
 
-%files
-# todo, we will have 3 packages later
+%files -n taigikeyboard-common
+%{_bindir}/taigikeyboard-settings
+%{_datadir}/taigikeyboard/
+%{_datadir}/applications/tw.taigikeyboard.Settings.desktop
+%{_datadir}/icons/hicolor/*/apps/taigikeyboard.png
+%files -n ibus-taigikeyboard
+%{_libexecdir}/ibus-engine-taigikeyboard
+%{_datadir}/ibus/component/taigikeyboard.xml
+%files -n fcitx5-taigikeyboard
+%{_libdir}/*/fcitx5/
+%{_datadir}/fcitx5/
 
 %changelog
 # todo

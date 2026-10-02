@@ -25,13 +25,22 @@ cd linux
 Summary: Common files for Taigi Keyboard
 Requires: hicolor-icon-theme
 
+%description -n taigikeyboard-common
+Common files as well as the settings app of Taigi Keyboard.
+
 %package -n ibus-taigikeyboard
 Summary: Taigi input method for IBus
 Requires: taigikeyboard-common
 
+%description -n ibus-taigikeyboard
+Taigi Keyboard's IBus frontend.
+
 %package -n fcitx5-taigikeyboard
 Summary: Taigi input method for Fcitx5
 Requires: taigikeyboard-common
+
+%description -n fcitx5-taigikeyboard
+Taigi Keyboard's Fcitx5 frontend.
 
 %prep
 %autosetup

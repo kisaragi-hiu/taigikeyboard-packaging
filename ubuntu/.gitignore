@@ -1,12 +1,12 @@
-# .orig tarballs
+# tarballs
 *.tar.gz
+*.tar.xz
 
 # src will contain the original source tree, so ignore it all
 src/*
 !src/debian
 
 # built output
-*.tar.xz
 *.dsc
 *.deb
 *.build

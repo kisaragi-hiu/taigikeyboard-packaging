@@ -67,7 +67,7 @@ cd linux
 %{_libexecdir}/ibus-engine-taigikeyboard
 %{_datadir}/ibus/component/taigikeyboard.xml
 %files -n fcitx5-taigikeyboard
-%{_libdir}/*/fcitx5/
+%{_libdir}/fcitx5/
 %{_datadir}/fcitx5/
 
 %changelog

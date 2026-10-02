@@ -34,9 +34,9 @@ Requires: taigikeyboard-common
 %build
 # todo
 cd linux
-make build
-make component
-make build-fcitx5
+%make_build build
+%make_build component
+%make_build build-fcitx5
 
 %install
 # todo

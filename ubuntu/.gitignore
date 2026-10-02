@@ -13,3 +13,4 @@ src/*
 *.buildinfo
 *.changes
 *.ppa.upload
+*.ddeb

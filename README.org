@@ -1,12 +1,15 @@
 * My TaigiKeyboard packaging for Ubuntu
 
+** Ubuntu
+
+This is published as a PPA at [[https://launchpad.net/~kisaragi-hiu/+archive/ubuntu/taigikeyboard]].
+
 Initially I followed [[https://optimizedbyotto.com/post/debian-packaging-from-git/][this guide]] for a Git-tracked “Debianized source tree”, but this project is kind of… heavy for that (the pristine tar produced by [[https://manpages.debian.org/testing/git-buildpackage/gbp-buildpackage.1.en.html][gbp]] is almost 900 MiB), and it's also inconvenient for tracking my customized build script that prepares the vendored Cargo dependencies for Launchpad. So I decided to have a dedicated packaging repository instead, since this works better for me as a third party (non-Debian, non-upstream) packager.
 
 My previous packaging attempt can be seen [[https://github.com/kisaragi-hiu/taigikeyboard-debian][here]]. Old packaging commits are imported into this repository and tags have been recreated to match.
 
-** Building
+See [[https://github.com/kisaragi-hiu/taigikeyboard-packaging/tree/main/ubuntu][./ubuntu/README.org]] for more.
 
-#+begin_src sh
-cd ubuntu
-make build
-#+end_src
+** Arch
+
+I added [[https://aur.archlinux.org/pkgbase/taigikeyboard][my AUR package]] as a submodule here for convenience.

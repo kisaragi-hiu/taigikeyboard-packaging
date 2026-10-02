@@ -4,7 +4,7 @@ Release: %autorelease
 Summary: An input method for Taiwanese Taigi
 License: Apache-2.0
 URL: https://taigikeyboard.tw
-Source: https://github.com/taigikeyboard/taigikeyboard/archive/refs/tags/desktop-${version}.tar.gz
+Source: https://github.com/taigikeyboard/taigikeyboard/archive/refs/tags/desktop-%{version}.tar.gz
 BuildRequires: make
 BuildRequires: cargo
 BuildRequires: pkgconf

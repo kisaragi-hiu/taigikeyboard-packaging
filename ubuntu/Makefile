@@ -29,3 +29,8 @@ build: src/README.md
 		-exec sed -i s/'"[a-z0-9\/-]*\/[a-z0-9]*\.a":"[a-z0-9]\+",'//g '{}' ';'
 	# then finally build the .dsc package
 	debuild -S -sa
+
+clean:
+	# We only clean within src/! This avoids deleting the original tarballs.
+	cd src
+	git clean -xdf

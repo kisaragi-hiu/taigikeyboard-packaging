@@ -2,9 +2,26 @@
 
 ** downloading and building locally
 
+download sources into where rpmbuild expects them
+
 #+begin_src sh
-# download sources into where rpmbuild expects them
 spectool -g -R taigikeyboard.spec
-# build both source and binary rpm
+#+end_src
+
+calculate dynamic builddeps so that they can be installed in the next step
+
+#+begin_src sh
+rpmbuild -br taigikeyboard.spec
+#+end_src
+
+install builddeps
+
+#+begin_src sh
+sudo dnf builddep ~/rpmbuild/SRPMS/… # rpmbuild will tell you where it is
+#+end_src
+
+build both source and binary rpm
+
+#+begin_src sh
 rpmbuild -ba taigikeyboard.spec
 #+end_src

@@ -13,3 +13,6 @@ See [[https://github.com/kisaragi-hiu/taigikeyboard-packaging/tree/main/ubuntu][
 ** Arch
 
 I added [[https://aur.archlinux.org/pkgbase/taigikeyboard][my AUR package]] as a submodule here for convenience.
+
+** Others
+Fedora (COPR), openSUSE (OBS)? Maybe we can use OBS for Debian as well?

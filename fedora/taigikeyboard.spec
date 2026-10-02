@@ -43,7 +43,7 @@ Requires: taigikeyboard-common
 Taigi Keyboard's Fcitx5 frontend.
 
 %prep
-%autosetup
+%autosetup -n %{name}-desktop-%{version}
 
 %build
 # todo

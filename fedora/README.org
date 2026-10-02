@@ -3,8 +3,8 @@
 ** downloading and building locally
 
 #+begin_src sh
-# download sources
-spectool -g taigikeyboard.spec
+# download sources into where rpmbuild expects them
+spectool -g -R taigikeyboard.spec
 # build both source and binary rpm
 rpmbuild -ba taigikeyboard.spec
 #+end_src

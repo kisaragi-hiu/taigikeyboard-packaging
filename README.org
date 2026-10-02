@@ -1,21 +1,24 @@
-* TaigiKeyboard Debian / Ubuntu packaging
-I followed [[https://optimizedbyotto.com/post/debian-packaging-from-git/][this guide]].
+* My TaigiKeyboard packaging for Ubuntu
 
-** Remotes, branches, and tags
-- The remote =upstreamvcs= points to the upstream repository.
-- The remote =origin= points to this packaging repository.
-- The tags should be the same as upstream, ie. =desktop-3.6.10= points to version 3.6.10 of the desktop release.
-- the branch =main= mirrors the upstream main branch.
-- the branch =upstream/latest= contains the latest upstream release. This refers to a branch whose name is =upstream/latest=, not a “latest” branch in a remote called “upstream”! This is presumably why that remote is called =upstreamvcs=.
-- the branch =debian/latest= contains =upstream/latest= + debian packaging. When upstream updates, presumably this branch is rebased onto the new =upstream/latest=.
-- the branch =pristine-tar= is the git-buildpackage pristine tar branch.
-- there might (?) be patch-queue branches? Although the patches already live in debian/.
+Initially I followed [[https://optimizedbyotto.com/post/debian-packaging-from-git/][this guide]] for a Git-tracked “Debianized source tree”, but this project is kind of… heavy for that (the pristine tar produced by [[https://manpages.debian.org/testing/git-buildpackage/gbp-buildpackage.1.en.html][gbp]] is almost 900 MiB), and it's also inconvenient for tracking my customized build script that prepares the vendored Cargo dependencies for Launchpad. I've therefore opted to have a dedicated packaging repository instead, since this works better for me as a third party (non-Debian, non-upstream) packager.
 
-To see the main packaging itself, check out =debian/latest=.
+The stuff below are not updated yet.
 
 ** Building
 
+Ugly way to include Cargo dependencies in the source package.
+
+TODO: this assumes the source code is already available at PWD.
+
 #+begin_src sh
+(cd linux && cargo vendor)
+mv linux/vendor debian
+# for whatever reason certain vendored packages have .gitignore files in them
+# which debuild understandably omits, but then checksum checks fail.
+find debian/vendor -path "*/.cargo-checksum.json" \
+    -exec sed -i s/'"[a-z0-9\/-]*\/\.gitignore":"[a-z0-9]\+",'//g '{}' ';'
+find debian/vendor -path "*/.cargo-checksum.json" \
+    -exec sed -i s/'"[a-z0-9\/-]*\/[a-z0-9]*\.a":"[a-z0-9]\+",'//g '{}' ';'
 # passed to dpkg-buildpackage.
 # -S: --build=source, build just a source package
 # -sa: source always includes orig
@@ -33,6 +36,8 @@ git remote add upstreamvcs https://github.com/taigikeyboard/taigikeyboard.git
 #+end_src
 
 ** Importing new upstream version
+
+TODO: I don't think I'm using gbp import-orig in my workflow here.
 
 #+begin_src sh
 git fetch upstreamvcs

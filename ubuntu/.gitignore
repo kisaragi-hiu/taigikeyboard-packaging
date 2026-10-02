@@ -1,2 +1,15 @@
 # .orig tarballs
 *.tar.gz
+
+# src will contain the original source tree, so ignore it all
+src/*
+!src/debian
+
+# built output
+*.tar.xz
+*.dsc
+*.deb
+*.build
+*.buildinfo
+*.changes
+*.ppa.upload

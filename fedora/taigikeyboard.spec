@@ -19,6 +19,7 @@ orthographies.
 
 %package -n taigikeyboard-common
 Summary: Common files for Taigi Keyboard
+Requires: hicolor-icon-theme
 
 %package -n ibus-taigikeyboard
 Summary: Taigi input method for IBus

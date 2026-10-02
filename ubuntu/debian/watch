@@ -1,20 +1,13 @@
-# Example watch control file for uscan.
-# Rename this file to "watch" and then you can run the "uscan" command
-# to check for upstream updates and more.
-# See uscan(1) for format.
+# Rename this file to "watch" and then you can run the "uscan" command to check
+# for upstream updates and more. See uscan(1) for format.
+Version: 5
 
-# Compulsory line, this is a version 4 file.
-version=4
-
-# PGP signature mangle, so foo.tar.gz has foo.tar.gz.sig.
-#opts="pgpsigurlmangle=s%$%.sig%"
-
-# GitHub hosted projects.
-opts="filenamemangle=s%(?:.*?)?v?(@ANY_VERSION@@ARCHIVE_EXT@)%@PACKAGE@-$1%" \
-   https://github.com/taigikeyboard/taigikeyboard/tags \
-   (?:.*?/)desktop-?@ANY_VERSION@@ARCHIVE_EXT@
-
-# GitLab hosted projects.
-#opts="filenamemangle=s%(?:.*?)?v?(@ANY_VERSION@@ARCHIVE_EXT@)%@PACKAGE@-$1%" \
-#    https://gitlab.com/<user>/<project>/-/tags \
-#    archive/v?@ANY_VERSION@/<project>-v?\d\S*@ARCHIVE_EXT@
+# We cannot use Template: Github, because we need to specifify a tag prefix.
+# Custom-Version is not available as that was added in uscan 2.26.8 but current
+# latest in Ubuntu 26.04 is 2.26.7.
+# This is copied from https://manpages.debian.org/unstable/devscripts/debian-watch.5.en.html#GitHub
+Source: https://api.github.com/repos/@PACKAGE@/@PACKAGE@/git/matching-refs/tags/desktop
+Matching-Pattern: https://api.github.com/repos/[^/]+/[^/]+/git/refs/tags/desktop-@ANY_VERSION@
+Download-Url-Mangle: s%(api.github.com/repos/[^/]+/[^/]+)/git/refs/%$1/tarball/refs/%g
+Filename-Mangle: s%.*/@ANY_VERSION@%@PACKAGE@-$1.tar.gz%
+Search-Mode: plain

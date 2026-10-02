@@ -1,0 +1,4 @@
+# .orig tarballs
+*.tar.gz
+# uscan turns the tag names into symlinks??
+desktop-*

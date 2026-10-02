@@ -11,6 +11,8 @@ BuildRequires: pkgconf
 BuildRequires: protobuf-compiler
 BuildRequires: cmake
 BuildRequires: extra-cmake-modules
+BuildRequires: gcc
+BuildRequires: gcc-c++
 BuildRequires: fcitx5
 
 %description

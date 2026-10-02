@@ -8,13 +8,19 @@ download sources into where rpmbuild expects them
 spectool -g -R taigikeyboard.spec
 #+end_src
 
-calculate dynamic builddeps so that they can be installed in the next step
+install static builddeps, otherwise dynamic builddeps can't be calculated
+
+#+begin_src sh
+sudo dnf builddep taigikeyboard.spec
+#+end_src
+
+calculate dynamic builddeps
 
 #+begin_src sh
 rpmbuild -br taigikeyboard.spec
 #+end_src
 
-install builddeps
+install dynamic builddeps
 
 #+begin_src sh
 sudo dnf builddep ~/rpmbuild/SRPMS/… # rpmbuild will tell you where it is

@@ -31,3 +31,10 @@ build both source and binary rpm
 #+begin_src sh
 rpmbuild -ba taigikeyboard.spec
 #+end_src
+
+* Todos
+** TODO does it build?
+** TODO does it put files in the right places?
+compare with [[https://packages.fedoraproject.org/pkgs/fcitx5-rime/][fcitx5-rime]] and [[https://packages.fedoraproject.org/pkgs/ibus-rime/][ibus-rime]]
+** TODO actually submit to COPR
+** TODO automate submission to COPR

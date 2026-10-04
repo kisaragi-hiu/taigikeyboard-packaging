@@ -46,7 +46,7 @@ Requires: taigikeyboard-common
 Taigi Keyboard's Fcitx5 frontend.
 
 %prep
-%autosetup -n %{name}-desktop-%{version}
+%autosetup -n %{name}-desktop-%{version} -p1
 
 %build
 # todo

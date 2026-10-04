@@ -5,6 +5,7 @@ Summary: An input method for Taiwanese Taigi
 License: Apache-2.0
 URL: https://taigikeyboard.tw
 Source: https://github.com/taigikeyboard/taigikeyboard/archive/refs/tags/desktop-%{version}.tar.gz
+Patch: patches/0002-patch-do-not-install-fonts.patch
 BuildRequires: make
 BuildRequires: cargo
 BuildRequires: pkgconf

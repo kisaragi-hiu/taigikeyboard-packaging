@@ -7,7 +7,8 @@ URL: https://taigikeyboard.tw
 Source: https://github.com/taigikeyboard/taigikeyboard/archive/refs/tags/desktop-%{version}.tar.gz
 Patch: 0001-Remove-some-makefile-dependencies-for-more-control-o.patch
 Patch: 0002-patch-do-not-install-fonts.patch
-BuildRequires: cargo-rpm-macros
+# BuildRequires: cargo-rpm-macros
+BuildRequires: cargo
 BuildRequires: make
 BuildRequires: pkgconf
 BuildRequires: protobuf-compiler
@@ -21,11 +22,11 @@ BuildRequires: fcitx5-devel
 Taigi Keyboard is an input method for typing Taiwanese Taigi using standard
 orthographies.
 
-%generate_buildrequires
-cd linux
-%cargo_generate_buildrequires
-cd ../desktop
-%cargo_generate_buildrequires
+# %generate_buildrequires
+# cd linux
+# %cargo_generate_buildrequires
+# cd ../desktop
+# %cargo_generate_buildrequires
 
 %package -n taigikeyboard-common
 Summary: Common files for Taigi Keyboard
@@ -51,13 +52,16 @@ Taigi Keyboard's Fcitx5 frontend.
 %prep
 %autosetup -n %{name}-desktop-%{version} -p1
 cd linux
-%cargo_prep
+# %cargo_prep
 
 %build
 cd linux
-# we can't use the upstream build target since we need to call cargo with
-# fedora's registry etc. set up
-%cargo_build
+# We have to just let cargo download because taigikeyboard wants rusqlite 0.40
+# while Fedora provides 0.38 currently.
+# # we can't use the upstream build target since we need to call cargo with
+# # fedora's registry etc. set up
+# %cargo_build
+%make_build build
 %make_build component
 %make_build build-fcitx5
 

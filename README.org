@@ -4,15 +4,32 @@
 
 This is published as a PPA at [[https://launchpad.net/~kisaragi-hiu/+archive/ubuntu/taigikeyboard]].
 
-Initially I followed [[https://optimizedbyotto.com/post/debian-packaging-from-git/][this guide]] for a Git-tracked “Debianized source tree”, but this project is kind of… heavy for that (the pristine tar produced by [[https://manpages.debian.org/testing/git-buildpackage/gbp-buildpackage.1.en.html][gbp]] is almost 900 MiB), and it's also inconvenient for tracking my customized build script that prepares the vendored Cargo dependencies for Launchpad. So I decided to have a dedicated packaging repository instead, since this works better for me as a third party (non-Debian, non-upstream) packager.
+To install:
 
-My previous packaging attempt can be seen [[https://github.com/kisaragi-hiu/taigikeyboard-debian][here]]. Old packaging commits are imported into this repository and tags have been recreated to match.
+#+begin_src sh
+sudo add-apt-repository ppa:kisaragi-hiu/taigikeyboard
+sudo apt update
+#+end_src
 
-See [[https://github.com/kisaragi-hiu/taigikeyboard-packaging/tree/main/ubuntu][./ubuntu/README.org]] for more.
+Then depending on if you use fcitx5 or ibus:
+
+#+begin_src sh
+sudo apt install fcitx5-taigikeyboard
+# or
+sudo apt install ibus-taigikeyboard
+#+end_src
+
+See [[./ubuntu/README.org]] for details on packaging.
 
 ** Arch
 
 I added [[https://aur.archlinux.org/pkgbase/taigikeyboard][my AUR package]] as a submodule here for convenience.
+
+To install: use your favorite AUR helper to install =fcitx5-taigikeyboard= or =ibus-taigikeyboard= depending on if you use fcitx5 or ibus.
+
+** Fedora
+
+See [[./fedora/README.org]] for details on packaging.
 
 ** Others
 Fedora (COPR), openSUSE (OBS)? Maybe we can use OBS for Debian as well?

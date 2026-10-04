@@ -17,6 +17,8 @@ BuildRequires: extra-cmake-modules
 BuildRequires: gcc
 BuildRequires: gcc-c++
 BuildRequires: fcitx5-devel
+BuildRequires: gtk4-devel
+BuildRequires: libadwaita-devel
 
 %description
 Taigi Keyboard is an input method for typing Taiwanese Taigi using standard

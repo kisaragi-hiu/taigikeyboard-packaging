@@ -1,0 +1,26 @@
+From: Kisaragi Hiu <mail@kisaragi-hiu.com>
+Date: Wed, 30 Sep 2026 04:48:04 +0900
+Subject: patch: do not install fonts
+
+An input method should not provide fonts just for fallback.
+---
+ linux/Makefile | 10 ----------
+ 1 file changed, 10 deletions(-)
+
+diff --git a/linux/Makefile b/linux/Makefile
+index ae222f9..6aca02a 100644
+--- a/linux/Makefile
++++ b/linux/Makefile
+@@ -138,12 +138,2 @@ install: build component install-fcitx5
+ 	done
+-	# The bundled typefaces (the ones macOS and Windows ship), as fontconfig
+-	# fallbacks for the Han characters the desktop's fonts lack (roadmap L4),
+-	# split by format the Debian way; users pick them in Fcitx5 / IBus (L7).
+-	install -Dm644 -t $(DESTDIR)$(PREFIX)/share/fonts/truetype/taigikeyboard ../fonts/font/*.ttf
+-	install -Dm644 -t $(DESTDIR)$(PREFIX)/share/fonts/opentype/taigikeyboard ../fonts/font/*.otf
+-	install -Dm644 ../fonts/OFL-1.1.txt $(DESTDIR)$(PREFIX)/share/doc/taigikeyboard/fonts-OFL-1.1.txt
+-	# A package gets its cache rebuilt by fontconfig's dpkg trigger; a direct
+-	# install into the live system rebuilds it here. Never for a staging root.
+-	$(if $(DESTDIR),,-fc-cache $(PREFIX)/share/fonts)
+-	@echo "installed under $(DESTDIR)$(PREFIX); restart fcitx5 (fcitx5 -r) and/or ibus (ibus restart)"
+ 

@@ -40,7 +40,5 @@ rpmbuild -ba taigikeyboard.spec
 
 * Todos
 ** DONE does it build?
-** TODO does it put files in the right places?
-compare with [[https://packages.fedoraproject.org/pkgs/fcitx5-rime/][fcitx5-rime]] and [[https://packages.fedoraproject.org/pkgs/ibus-rime/][ibus-rime]]
 ** DONE actually submit to COPR
 ** TODO automate submission to COPR

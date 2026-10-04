@@ -1,5 +1,4 @@
 * Fedora
-
 ** doing a local build
 
 download sources into where rpmbuild expects them
@@ -38,5 +37,7 @@ then build both source and binary rpm
 rpmbuild -ba taigikeyboard.spec
 #+end_src
 
-* Todos
-** TODO automate submission to COPR
+** Doing a release
+Because this repository will have unrelated commits and other tags, I think it's probably best we just keep the builds manually triggered, then add tags after builds have succeeded.
+
+Keep in mind this build requires access to crates.io, which requires internet access during build. Due to upstream's dependency on rusqlite 0.40 (newer than what's in Fedora) and possibly other missing Rust dependencies, we have to pull from crates.io instead.

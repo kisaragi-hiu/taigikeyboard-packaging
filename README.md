@@ -1,4 +1,4 @@
-# My TaigiKeyboard packaging for Ubuntu
+# My [TaigiKeyboard](https://github.com/taigikeyboard/taigikeyboard) packaging
 
 ## Ubuntu
 

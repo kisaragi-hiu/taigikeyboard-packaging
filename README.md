@@ -1,5 +1,9 @@
 # My [TaigiKeyboard](https://github.com/taigikeyboard/taigikeyboard) packaging
 
+Setting up repositories allows the user side to simply do a normal system update in order to get new versions.
+
+It also allows for relatively easily providing binary packages for many architectures.
+
 ## Ubuntu
 
 This is published as a PPA at <https://launchpad.net/~kisaragi-hiu/+archive/ubuntu/taigikeyboard>.

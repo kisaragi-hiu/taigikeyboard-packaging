@@ -48,6 +48,8 @@ Taigi Keyboard's Fcitx5 frontend.
 
 %prep
 %autosetup -n %{name}-desktop-%{version} -p1
+cd linux
+%cargo_prep
 
 %build
 cd linux

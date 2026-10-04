@@ -7,8 +7,8 @@ URL: https://taigikeyboard.tw
 Source: https://github.com/taigikeyboard/taigikeyboard/archive/refs/tags/desktop-%{version}.tar.gz
 Patch: 0001-Remove-some-makefile-dependencies-for-more-control-o.patch
 Patch: 0002-patch-do-not-install-fonts.patch
+BuildRequires: cargo-rpm-macros
 BuildRequires: make
-BuildRequires: cargo
 BuildRequires: pkgconf
 BuildRequires: protobuf-compiler
 BuildRequires: cmake

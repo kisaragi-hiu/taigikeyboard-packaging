@@ -5,6 +5,7 @@ Summary: An input method for Taiwanese Taigi
 License: Apache-2.0
 URL: https://taigikeyboard.tw
 Source: https://github.com/taigikeyboard/taigikeyboard/archive/refs/tags/desktop-%{version}.tar.gz
+Patch: 0001-Remove-some-makefile-dependencies-for-more-control-o.patch
 Patch: 0002-patch-do-not-install-fonts.patch
 BuildRequires: make
 BuildRequires: cargo
@@ -49,9 +50,10 @@ Taigi Keyboard's Fcitx5 frontend.
 %autosetup -n %{name}-desktop-%{version} -p1
 
 %build
-# todo
 cd linux
-%make_build build
+# we can't use the upstream build target since we need to call cargo with
+# fedora's registry etc. set up
+%cargo_build
 %make_build component
 %make_build build-fcitx5
 

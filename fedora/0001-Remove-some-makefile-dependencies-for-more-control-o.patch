@@ -1,0 +1,35 @@
+From a6f652c0e4442bf98bf534d9ad162a3e43e974d6 Mon Sep 17 00:00:00 2001
+From: Kisaragi Hiu <mail@kisaragi-hiu.com>
+Date: Sun, 4 Oct 2026 13:25:56 +0900
+Subject: [PATCH] Remove some makefile dependencies for more control of build
+ order
+
+For Fedora, cargo build needs to be invoked as an rpm macro, not in a
+Makefile. But we still want to use other targets. So those targets need
+to be made to not trigger the build target.
+---
+ linux/Makefile | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/linux/Makefile b/linux/Makefile
+index 165ee16..c0ba795 100644
+--- a/linux/Makefile
++++ b/linux/Makefile
+@@ -145,3 +145,3 @@ endif
+ FCITX5_BUILD_DIR := target/fcitx5-build
+-build-fcitx5: build
++build-fcitx5:
+ 	cmake -S fcitx5 -B $(FCITX5_BUILD_DIR) -DCMAKE_BUILD_TYPE=Release \
+@@ -158,3 +158,3 @@ component: data/taigikeyboard.xml.in
+ # one the binaries were built with (`TAIGIKEYBOARD_PREFIX`, default /usr).
+-install: build component install-fcitx5
++install: component install-fcitx5
+ 	install -Dm755 target/release/ibus-engine-taigikeyboard $(DESTDIR)$(LIBEXECDIR)/ibus-engine-taigikeyboard
+@@ -193,3 +193,3 @@ endif
+ # The addon's .so + its two .conf files, through CMake's own install rules.
+-install-fcitx5: build-fcitx5
++install-fcitx5:
+ 	DESTDIR=$(DESTDIR) cmake --install $(FCITX5_BUILD_DIR)
+-- 
+2.55.0
+

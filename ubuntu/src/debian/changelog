@@ -9,7 +9,6 @@ taigikeyboard (3.6.10-0ppa8) resolute; urgency=medium
   * Remove other unused files in packaging: gbp config, salsa ci sample
   * Packaging now uses 0BSD as license
   * Specify more information in copyright file
-  * Excluded a bunch of files from the source to reduce size
 
  -- Kisaragi Hiu <mail@kisaragi-hiu.com>  Wed, 30 Sep 2026 09:24:08 +0900
 

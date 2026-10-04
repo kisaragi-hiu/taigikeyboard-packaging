@@ -1,6 +1,6 @@
 * Fedora
 
-** downloading and building locally
+** doing a local build
 
 download sources into where rpmbuild expects them
 
@@ -12,6 +12,12 @@ install static builddeps, otherwise dynamic builddeps can't be calculated
 
 #+begin_src sh
 sudo dnf builddep taigikeyboard.spec
+#+end_src
+
+put the patch files where rpmbuild expects them. COPR automates this, but a test local build doesn't have that automation.
+
+#+begin_src sh
+cp *.patch ~/rpmbuild/SOURCES/
 #+end_src
 
 calculate dynamic builddeps
@@ -26,15 +32,15 @@ install dynamic builddeps
 sudo dnf builddep ~/rpmbuild/SRPMS/… # rpmbuild will tell you where it is
 #+end_src
 
-build both source and binary rpm
+then build both source and binary rpm
 
 #+begin_src sh
 rpmbuild -ba taigikeyboard.spec
 #+end_src
 
 * Todos
-** TODO does it build?
+** DONE does it build?
 ** TODO does it put files in the right places?
 compare with [[https://packages.fedoraproject.org/pkgs/fcitx5-rime/][fcitx5-rime]] and [[https://packages.fedoraproject.org/pkgs/ibus-rime/][ibus-rime]]
-** TODO actually submit to COPR
+** DONE actually submit to COPR
 ** TODO automate submission to COPR

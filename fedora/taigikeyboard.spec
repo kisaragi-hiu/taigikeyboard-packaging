@@ -24,6 +24,8 @@ orthographies.
 %generate_buildrequires
 cd linux
 %cargo_generate_buildrequires
+cd ../desktop
+%cargo_generate_buildrequires
 
 %package -n taigikeyboard-common
 Summary: Common files for Taigi Keyboard

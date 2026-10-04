@@ -39,5 +39,4 @@ rpmbuild -ba taigikeyboard.spec
 #+end_src
 
 * Todos
-** DONE actually submit to COPR
 ** TODO automate submission to COPR

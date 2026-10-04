@@ -8,6 +8,8 @@ It also allows for relatively easily providing binary packages for many architec
 
 This is published as a PPA at <https://launchpad.net/~kisaragi-hiu/+archive/ubuntu/taigikeyboard>.
 
+Build is currently enabled for Ubuntu 26.04; for architectures x86_64 (amd64), arm64, armhf, and riscv64.
+
 To install:
 
 ``` sh
@@ -28,6 +30,8 @@ See [./ubuntu/README.org](./ubuntu/README.org) for details on packaging.
 ## Fedora
 
 This is published to COPR at <https://copr.fedorainfracloud.org/coprs/kisaragi-hiu/taigikeyboard/>.
+
+Build is currently enabled for Fedora 44, 45, and Rawhide; for architectures x86_64 and aarch64.
 
 To install:
 

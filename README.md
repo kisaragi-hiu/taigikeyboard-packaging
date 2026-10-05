@@ -49,6 +49,26 @@ sudo dnf install ibus-taigikeyboard
 
 See [./fedora/README.org](./fedora/README.org) for details on packaging.
 
+## Bazzite
+
+This should work for other Fedora / rpm-ostree based immutable distributions as well.
+
+Add the COPR [the same way Bazzite documents it](https://docs.bazzite.gg/Installing_and_Managing_Software/rpm-ostree):
+
+``` sh
+sudo dnf copr enable kisaragi-hiu/taigikeyboard
+```
+
+Then depending on if you use fcitx5 or ibus:
+
+``` sh
+rpm-ostree install fcitx5-taigikeyboard
+# or
+rpm-ostree install ibus-taigikeyboard
+```
+
+Normal layering caveats apply, so hopefully I don't cause updates to be blocked.
+
 ## Arch
 
 I added [my AUR package](https://aur.archlinux.org/pkgbase/taigikeyboard) as a submodule here for convenience.

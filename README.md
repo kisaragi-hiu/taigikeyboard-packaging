@@ -47,7 +47,7 @@ sudo dnf install fcitx5-taigikeyboard
 sudo dnf install ibus-taigikeyboard
 ```
 
-See [./fedora/README.org](./fedora/README.org) for details on packaging.
+See [./copr/README.org](./copr/README.org) for details on packaging.
 
 ## Bazzite
 

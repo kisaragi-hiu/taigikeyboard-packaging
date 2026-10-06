@@ -80,6 +80,8 @@ cd linux
 %{_datadir}/taigikeyboard/
 %{_datadir}/applications/tw.taigikeyboard.Settings.desktop
 %{_datadir}/icons/hicolor/*/apps/taigikeyboard.png
+%{_datadir}/icons/hicolor/*/apps/taigikeyboard*.png
+%{_datadir}/licenses/taigikeyboard/
 %files -n ibus-taigikeyboard
 %{_libexecdir}/ibus-engine-taigikeyboard
 %{_datadir}/ibus/component/taigikeyboard.xml

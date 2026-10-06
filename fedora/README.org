@@ -1,5 +1,11 @@
 * Fedora
-** doing a local build
+** Setup for local build
+#+begin_src sh
+sudo dnf install rpm-build rpmdevtools
+rpmdev-setuptree
+#+end_src
+
+** Doing a local build
 
 download sources into where rpmbuild expects them
 
@@ -41,3 +47,55 @@ rpmbuild -ba taigikeyboard.spec
 Because this repository will have unrelated commits and other tags, I think it's probably best we just keep the builds manually triggered, then add tags after builds have succeeded.
 
 Keep in mind this build requires access to crates.io, which requires internet access during build. Due to upstream's dependency on rusqlite 0.40 (newer than what's in Fedora) and possibly other missing Rust dependencies, we have to pull from crates.io instead.
+* openSUSE
+There is a fair bit of compatibility.
+** Setup for local build
+#+begin_src sh
+sudo zypper install rpm-build rpmdevtools
+rpmdev-setuptree
+#+end_src
+
+** Doing a local build
+
+download sources into where rpmbuild expects them
+
+#+begin_src sh
+rpmdev-spectool -g -R taigikeyboard.spec
+#+end_src
+
+install static builddeps. zypper doesn't have a way to install them from a spec file, and even after setting up =dnf builddep= and repositories it still couldn't find several, so just install them manually.
+
+#+begin_src sh
+sudo zypper install \
+    cargo \
+    pkgconf \
+    protobuf-devel \
+    cmake extra-cmake-modules \
+    gcc gcc-c++ \
+    fcitx5-devel \
+    gtk4-devel libadwaita-devel
+#+end_src
+
+put the patch files where rpmbuild expects them. COPR automates this, but a test local build doesn't have that automation.
+
+#+begin_src sh
+cp *.patch ~/rpmbuild/SOURCES/
+#+end_src
+
+calculate dynamic builddeps
+
+#+begin_src sh
+rpmbuild -br taigikeyboard.spec
+#+end_src
+
+install dynamic builddeps
+
+#+begin_src sh
+sudo dnf builddep ~/rpmbuild/SRPMS/… # rpmbuild will tell you where it is
+#+end_src
+
+then build both source and binary rpm
+
+#+begin_src sh
+rpmbuild -ba taigikeyboard.spec
+#+end_src

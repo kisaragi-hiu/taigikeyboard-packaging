@@ -11,7 +11,11 @@ Patch: 0002-patch-do-not-install-fonts.patch
 BuildRequires: cargo
 BuildRequires: make
 BuildRequires: pkgconf
+%if 0%{?suse_version}
+BuildRequires: protobuf-devel
+%else
 BuildRequires: protobuf-compiler
+%endif
 BuildRequires: cmake
 BuildRequires: extra-cmake-modules
 BuildRequires: gcc

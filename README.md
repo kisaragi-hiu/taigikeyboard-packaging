@@ -49,6 +49,31 @@ sudo dnf install ibus-taigikeyboard
 
 See [./copr/README.org](./copr/README.org) for details on packaging.
 
+## openSUSE
+
+The COPR build includes builds for openSUSE Leap 16.0 and Tumbleweed.
+
+openSUSE Tumbleweed:
+
+``` sh
+sudo zypper addrepo 'https://copr.fedorainfracloud.org/coprs/kisaragi-hiu/taigikeyboard/repo/opensuse-tumbleweed/kisaragi-hiu-taigikeyboard-opensuse-tumbleweed.repo'
+sudo zypper refresh
+```
+
+openSUSE Leap 16.0:
+
+``` sh
+sudo zypper addrepo 'https://copr.fedorainfracloud.org/coprs/kisaragi-hiu/taigikeyboard/repo/opensuse-leap-16.0/kisaragi-hiu-taigikeyboard-opensuse-leap-16.0.repo'
+sudo zypper refresh
+```
+
+Then depending on if you use fcitx5 or ibus:
+
+``` sh
+sudo zypper install fcitx5-taigikeyboard
+sudo zypper install ibus-taigikeyboard
+```
+
 ## Bazzite
 
 This should work for other Fedora / rpm-ostree based immutable distributions as well.

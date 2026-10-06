@@ -1,6 +1,13 @@
 * trunk / nightly builds
 https://copr.fedorainfracloud.org/coprs/kisaragi-hiu/taigikeyboard-nightly/
 
+#+begin_src sh
+# if the normal repository is in use
+sudo dnf copr disable kisaragi-hiu/taigikeyboard
+sudo dnf copr enable kisaragi-hiu/taigikeyboard-nightly
+sudo dnf install fcitx5-taigikeyboard
+#+end_src
+
 I chose to use the same package name to simplify management on my part.
 
 Trigger builds: /hopefully/ just go to COPR and trigger a new build. This would work until upstream build changes.

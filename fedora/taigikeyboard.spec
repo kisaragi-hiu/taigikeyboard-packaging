@@ -1,6 +1,6 @@
 Name: taigikeyboard
 Version: 3.6.10
-Release: %autorelease
+Release: 2%{?dist}
 Summary: An input method for Taiwanese Taigi
 License: Apache-2.0
 URL: https://taigikeyboard.tw
@@ -84,4 +84,5 @@ cd linux
 %{_datadir}/fcitx5/
 
 %changelog
-%autochangelog
+# this is not an official package and I don't actually have anything to say, so
+# just leave it blank (autochangelog is effortless but doesn't work for openSUSE)

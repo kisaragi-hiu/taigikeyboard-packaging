@@ -1,10 +1,10 @@
 Name: taigikeyboard
-Version: 3.6.10
-Release: 2%{?dist}
+Version: 3.6.13-pre
+Release: 1%{?dist}
 Summary: An input method for Taiwanese Taigi
 License: Apache-2.0
 URL: https://taigikeyboard.tw
-Source: https://github.com/taigikeyboard/taigikeyboard/archive/refs/tags/desktop-%{version}.tar.gz
+Source: https://github.com/taigikeyboard/taigikeyboard/archive/refs/heads/main.tar.gz
 Patch: 0001-Remove-some-makefile-dependencies-for-more-control-o.patch
 Patch: 0002-patch-do-not-install-fonts.patch
 # BuildRequires: cargo-rpm-macros
@@ -56,7 +56,7 @@ Requires: taigikeyboard-common
 Taigi Keyboard's Fcitx5 frontend.
 
 %prep
-%autosetup -n %{name}-desktop-%{version} -p1
+%autosetup -n %{name}-main -p1
 cd linux
 # %cargo_prep
 

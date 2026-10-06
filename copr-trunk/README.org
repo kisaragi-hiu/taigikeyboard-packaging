@@ -1,1 +1,6 @@
-trunk / nightly builds
+* trunk / nightly builds
+https://copr.fedorainfracloud.org/coprs/kisaragi-hiu/taigikeyboard-nightly/
+
+I chose to use the same package name to simplify management on my part.
+
+Trigger builds: /hopefully/ just go to COPR and trigger a new build. This would work until upstream build changes.

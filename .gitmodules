@@ -1,3 +1,6 @@
 [submodule "aur"]
 	path = aur
 	url = https://aur.archlinux.org/taigikeyboard.git
+[submodule "aur-git"]
+	path = aur-git
+	url = https://aur.archlinux.org/taigikeyboard-git.git

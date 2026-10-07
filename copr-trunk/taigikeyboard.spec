@@ -1,6 +1,6 @@
 Name: taigikeyboard
 Version: 3.6.13unreleased
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: An input method for Taiwanese Taigi
 License: Apache-2.0
 URL: https://taigikeyboard.tw

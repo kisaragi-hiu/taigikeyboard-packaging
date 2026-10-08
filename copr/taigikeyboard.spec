@@ -1,12 +1,10 @@
 Name: taigikeyboard
-Version: 3.6.10
-Release: 2%{?dist}
+Version: 3.7.0
+Release: 1%{?dist}
 Summary: An input method for Taiwanese Taigi
 License: Apache-2.0
 URL: https://taigikeyboard.tw
 Source: https://github.com/taigikeyboard/taigikeyboard/archive/refs/tags/desktop-%{version}.tar.gz
-Patch: 0001-Remove-some-makefile-dependencies-for-more-control-o.patch
-Patch: 0002-patch-do-not-install-fonts.patch
 # BuildRequires: cargo-rpm-macros
 BuildRequires: cargo
 BuildRequires: make
@@ -73,13 +71,15 @@ cd linux
 
 %install
 cd linux
-%make_install
+%make_install LAYOUT=fedora INSTALL_FONTS=0
 
 %files -n taigikeyboard-common
 %{_bindir}/taigikeyboard-settings
 %{_datadir}/taigikeyboard/
 %{_datadir}/applications/tw.taigikeyboard.Settings.desktop
 %{_datadir}/icons/hicolor/*/apps/taigikeyboard.png
+%{_datadir}/icons/hicolor/*/apps/taigikeyboard*.png
+%{_datadir}/licenses/taigikeyboard/
 %files -n ibus-taigikeyboard
 %{_libexecdir}/ibus-engine-taigikeyboard
 %{_datadir}/ibus/component/taigikeyboard.xml

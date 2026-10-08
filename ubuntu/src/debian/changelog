@@ -1,3 +1,10 @@
+taigikeyboard (3.7.0-0ppa1) resolute; urgency=medium
+
+  * New upstream release
+  * Filter out some unused files from source archive
+
+ -- Kisaragi Hiu <mail@kisaragi-hiu.com>  Wed, 9 Oct 2026 07:35:05 +0900
+
 taigikeyboard (3.6.10-0ppa8) resolute; urgency=medium
 
   * Split the packaging repository into its own such that upstream code is

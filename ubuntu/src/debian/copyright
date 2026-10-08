@@ -1,16 +1,18 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-#Files-Excluded:
-## unused
-# corpus
-## other platforms, unused
-# android
-# ios
-# macos
-# windows
-## should not be applicable for fcitx5 or ibus
-# fonts
-## We are using the prebuilt dictionary files in dictionaries/ anyways
-# dictionary
+Files-Excluded:
+# unused
+ corpus
+ screenshots
+ film
+# other platforms, unused
+ android
+ ios
+ macos
+ windows
+# should not be applicable for fcitx5 or ibus
+ assets/fonts
+# We are using the prebuilt dictionary files in assets/dictionaries/ anyways
+ dictionary
 Source: https://github.com/taigikeyboard/taigikeyboard
 Upstream-Name: taigikeyboard
 Upstream-Contact: Taigi Keyboard <info@taigikeyboard.tw>

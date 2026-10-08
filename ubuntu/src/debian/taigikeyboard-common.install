@@ -2,3 +2,5 @@ usr/bin/taigikeyboard-settings
 usr/share/taigikeyboard/
 usr/share/applications/tw.taigikeyboard.Settings.desktop
 usr/share/icons/hicolor/*/apps/taigikeyboard.png
+usr/share/icons/hicolor/*/apps/taigikeyboard*.png
+usr/share/doc/taigikeyboard

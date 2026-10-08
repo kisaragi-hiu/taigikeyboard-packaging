@@ -9,9 +9,7 @@ src/README.md:
 	echo "Asking uscan which version we are unpacking..."
 	VERSION=$$(uscan --report-status --dehs 2>/dev/null | grep '<upstream-version>' | sed s/'<\/\?upstream-version>//g')
 	echo "The version is $$VERSION."
-	# when we are using files-excluded, this will be the file name
-	# FILE=../taigikeyboard_"$$VERSION".orig.tar.xz
-	FILE=../taigikeyboard_"$$VERSION".orig.tar.gz
+	FILE=../taigikeyboard_"$$VERSION".orig.tar.xz
 	if [ ! -f "$$FILE" ]; then
 		echo "Downloading the tarball..."
 		uscan -dd

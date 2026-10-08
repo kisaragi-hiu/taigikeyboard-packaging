@@ -8,9 +8,9 @@ override_dh_clean:
 
 override_dh_auto_build:
 	# support a local build without vendoring
-	[ -d debian/vendor ] && mkdir -p linux/.cargo
-	[ -d debian/vendor ] && cp debian/cargo.config.toml linux/.cargo/config.toml
-	[ -d debian/vendor ] && mv debian/vendor linux/vendor
+	if [ -d debian/vendor ]; then mkdir -p linux/.cargo; fi
+	if [ -d debian/vendor ]; then cp debian/cargo.config.toml linux/.cargo/config.toml; fi
+	if [ -d debian/vendor ]; then mv debian/vendor linux/vendor; fi
 	dh_auto_build -- -C linux build
 	dh_auto_build -- -C linux component
 	dh_auto_build -- -C linux build-fcitx5

@@ -12,6 +12,8 @@ Files-Excluded:
  assets/fonts
 # We are using the prebuilt dictionary files in assets/dictionaries/ anyways
  dictionary
+Files-Included:
+ dictionary/LICENSE
 Source: https://github.com/taigikeyboard/taigikeyboard
 Upstream-Name: taigikeyboard
 Upstream-Contact: Taigi Keyboard <info@taigikeyboard.tw>

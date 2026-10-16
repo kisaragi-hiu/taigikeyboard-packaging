@@ -14,11 +14,13 @@ Hence the =debian/= directory existing as =:/ubuntu/src/debian=.
 
 ** Building
 
+These all have to run in Ubuntu.
+
 #+begin_src sh
 make build
 #+end_src
 
-** Publishing
+*** Publishing
 
 After building
 
@@ -26,7 +28,7 @@ After building
 dput ppa:kisaragi-hiu/taigikeyboard <.changes>
 #+end_src
 
-** Making a new package revision
+*** Making a new package revision
 
 Write a new entry at =src/debian/changelog=, then
 

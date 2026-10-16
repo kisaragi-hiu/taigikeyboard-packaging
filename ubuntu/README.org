@@ -38,6 +38,4 @@ make clean
 
 ** Updating to a new upstream version
 
-I'm not sure.
-
-It's probably uscan, write a new entry, make sure it builds locally (fix patches), then rebuild + reupload. But a new upstream version hasn't happened yet so I haven't done this yet.
+Write a new changelog entry, make sure it builds locally (fix patches), then rebuild and upload.

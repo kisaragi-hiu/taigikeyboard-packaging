@@ -1,6 +1,6 @@
 # My [TaigiKeyboard](https://github.com/taigikeyboard/taigikeyboard) packaging
 
-這馬更新版本：[3.7.0](https://github.com/taigikeyboard/taigikeyboard/releases/tag/desktop-3.7.0)。
+這馬更新版本：[3.8.0](https://github.com/taigikeyboard/taigikeyboard/releases/tag/desktop-3.8.0)。
 
 這寡套件會使設定軟體庫，予用者直接做系統更新來更新到新版本，毋免閣家己安裝。
 

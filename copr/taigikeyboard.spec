@@ -1,5 +1,5 @@
 Name: taigikeyboard
-Version: 3.7.0
+Version: 3.8.0
 Release: 1%{?dist}
 Summary: An input method for Taiwanese Taigi
 License: Apache-2.0

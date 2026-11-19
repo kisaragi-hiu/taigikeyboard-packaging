@@ -75,6 +75,7 @@ cd linux
 
 %files -n taigikeyboard-common
 %{_bindir}/taigikeyboard-settings
+%{_bindir}/taigikeyboard-popup
 %{_datadir}/taigikeyboard/
 %{_datadir}/applications/tw.taigikeyboard.Settings.desktop
 %{_datadir}/icons/hicolor/*/apps/taigikeyboard.png

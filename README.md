@@ -81,6 +81,8 @@ sudo zypper install ibus-taigikeyboard
 
 其他用 Fedora / rpm-ostree 做基礎的 immutable distro 應該 mā 會使按呢安裝。
 
+Bazzite 45 開始用的是 Flatpak 版的 Fcitx5，毋過因為我毋知按怎做 Flatpak package 這馬暫時猶是愛用 COPR。
+
 [用 Bazzite 寫的方式](https://docs.bazzite.gg/Installing_and_Managing_Software/rpm-ostree)添 COPR：
 
 ``` sh
@@ -91,7 +93,9 @@ sudo dnf copr enable kisaragi-hiu/taigikeyboard
 
 ``` sh
 # 若 fcitx5
-rpm-ostree install fcitx5-taigikeyboard
+# 嘛做伙 uì 安裝佇規个系統 ê fcitx5
+rpm-ostree install fcitx5 fcitx5-taigikeyboard
+
 # 若 ibus
 rpm-ostree install ibus-taigikeyboard
 ```

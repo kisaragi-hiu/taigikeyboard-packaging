@@ -35,6 +35,24 @@ build: src
 		-exec sed -i s/'"[a-z0-9\/-]*\/\.gitignore":"[a-z0-9]\+",'//g '{}' ';'
 	find debian/vendor -path "*/.cargo-checksum.json" \
 		-exec sed -i s/'"[a-z0-9\/-]*\/[a-z0-9]*\.a":"[a-z0-9]\+",'//g '{}' ';'
+	# work around vendored binary files
+	find debian/vendor '(' \
+		-path "*.ttf" \
+		-or -path "*.png" \
+		-or -path "*.wasm" \
+		-or -path "*.lib" \
+		-or -path "*.dll" \
+		-or -path "*.font" \
+		-or -path "*.ttc" \
+		-or -path "*.otb" \
+		')' -delete
+	# and (try to) delete them from checksum files
+	find debian/vendor -path "*/.cargo-checksum.json" \
+		-exec sed -i s/'"[a-z0-9\/-]*\/[a-z0-9.@]\.(ttf|png|wasm|lib|dll|font|ttc|otb)":"[a-z0-9]\+",'//g '{}' ';'
+	# add back final newline if they are stripped
+	# https://unix.stackexchange.com/a/31955
+	find debian/vendor -path "*/.cargo-checksum.json" \
+		-exec sed -i -e '$$a\\' '{}' ';'
 	# then finally build the .dsc package
 	debuild -S -sa
 
